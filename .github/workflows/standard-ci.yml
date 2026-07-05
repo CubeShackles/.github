@@ -53,6 +53,7 @@ jobs:
         with:
           app-id: ${{ secrets.CUBESHACKLES_APP_ID }}
           private-key: ${{ secrets.CUBESHACKLES_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
 
       - name: Checkout Cubeshackles-core
         uses: actions/checkout@v4
