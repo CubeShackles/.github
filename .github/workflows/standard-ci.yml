@@ -1,0 +1,94 @@
+# CubeShackles/.github/.github/workflows/standard-ci.yml
+#
+# Reusable workflow — called by all 53 repos.
+# Auth: GitHub App token minted per-run (no PATs, no rotation).
+# Checkout: calling repo + Cubeshackles-core guaranteed on every run.
+
+name: Standard CI
+
+on:
+  workflow_call:
+    inputs:
+      stack:
+        description: "python | node | python-node"
+        type: string
+        default: "python"
+      python-version:
+        type: string
+        default: "3.12"
+      node-version:
+        type: string
+        default: "20"
+      install-command:
+        description: "Override default install. Default: pip install -r requirements.txt (python) or npm ci (node)"
+        type: string
+        default: ""
+      test-command:
+        description: "Command to run tests"
+        type: string
+        default: "pytest -q"
+      core-path:
+        description: "Path where Cubeshackles-core is checked out"
+        type: string
+        default: "cubeshackles-core"
+    secrets:
+      CUBESHACKLES_APP_ID:
+        required: true
+      CUBESHACKLES_APP_PRIVATE_KEY:
+        required: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate CI token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.CUBESHACKLES_APP_ID }}
+          private-key: ${{ secrets.CUBESHACKLES_APP_PRIVATE_KEY }}
+
+      - name: Checkout Cubeshackles-core
+        uses: actions/checkout@v4
+        with:
+          repository: CubeShackles/Cubeshackles-core
+          path: ${{ inputs.core-path }}
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Set up Python
+        if: ${{ inputs.stack == 'python' || inputs.stack == 'python-node' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python-version }}
+
+      - name: Set up Node
+        if: ${{ inputs.stack == 'node' || inputs.stack == 'python-node' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: ${{ (inputs.stack == 'node' || inputs.stack == 'python-node') && 'npm' || '' }}
+
+      - name: Install Cubeshackles-core
+        if: ${{ inputs.stack == 'python' || inputs.stack == 'python-node' }}
+        run: pip install -e ${{ inputs.core-path }}/
+
+      - name: Install dependencies (Python default)
+        if: ${{ inputs.install-command == '' && (inputs.stack == 'python' || inputs.stack == 'python-node') }}
+        run: pip install -r requirements.txt
+
+      - name: Install dependencies (Node default)
+        if: ${{ inputs.install-command == '' && (inputs.stack == 'node' || inputs.stack == 'python-node') }}
+        run: npm ci
+
+      - name: Install dependencies (custom)
+        if: ${{ inputs.install-command != '' }}
+        run: ${{ inputs.install-command }}
+
+      - name: Run tests
+        run: ${{ inputs.test-command }}
