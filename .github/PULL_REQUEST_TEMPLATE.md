@@ -1,15 +1,37 @@
-## Pull request checklist (CubeShackles)
+## Pull request — CubeShackles institutional checklist
 
-This organization is **CubeShackles (founder-led)**.
+**Owner: CubeShackles (founder-led).** External reviewers (exchanges, funds, regulators) should understand this change in seconds via labels + milestone.
 
-- [ ] Change is honest about maturity (implements vs planned).
-- [ ] No secrets committed.
-- [ ] Shared contract changes landed in `cubeshackles-contracts` first when applicable.
-- [ ] Docs/README do not present AI tool vendors as authors or owners.
-- [ ] No AI-vendor marketing badges (Devin/Cursor/Copilot/etc.) in the PR description.
+### Required labels (set all three classes)
 
-Umbrella contribution rules:
-https://github.com/CubeShackles/cubeshackles/blob/main/CONTRIBUTING.md
+- [ ] `type:*` — one of: bug / fix / feat / docs / security / compliance / test / infra / refactor / chore
+- [ ] `layer:*` — architectural layer (canonical / contracts / foundation / protocol / api / institutional / access / intelligence / sovereign / ops)
+- [ ] `risk:*` — consensus-critical / public-surface / advisory-only / ops-only / secrets-sensitive
 
-Authorship policy:
-https://github.com/CubeShackles/cubeshackles/blob/main/governance/policies/authorship-and-tooling.md
+### Required milestone
+
+- [ ] Milestone set to the active platform clock item (`Feature Freeze Candidate`, `PLATFORM_BETA_1`, `Angola Pilot`, or a completed milestone only when documenting historical close-out)
+
+### Feature freeze (when applicable)
+
+- [ ] `freeze:allowed` **or** `freeze:exception-required`
+
+### Optional audience tags
+
+- [ ] `audience:regulator` / `audience:institutional` / `audience:developer` / `audience:ops`
+
+### Commits
+
+- [ ] Conventional subjects (`fix:`, `docs:`, `security:`, …) matching `type:*`
+- [ ] No AI-vendor marketing badges or required tool `Co-authored-by` lines
+
+### Why this change (1–3 sentences for institutional readers)
+
+
+
+### Evidence links (gates, docs, regulator pack)
+
+
+
+Taxonomy: https://github.com/CubeShackles/cubeshackles/blob/main/docs/GITHUB_TAXONOMY.md  
+Contribution rules: https://github.com/CubeShackles/cubeshackles/blob/main/CONTRIBUTING.md
