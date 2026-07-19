@@ -75,3 +75,12 @@ Todas as permissões da aplicação, alterações de acesso a repositórios e au
 **Função:** Aplicação GitHub da CubeShackles e repositório de controlo da automação organizacional  
 **Idioma canónico:** Inglês  
 **Localização institucional:** Português (`pt-AO`)
+
+<!--
+localization:
+  canonical_file: README.md
+  locale: pt-AO
+  translation_status: machine-assisted
+  canonical_commit: aa612a51e1e1f1739eb654342023c01f9e62841d
+  last_synchronized: 2026-07-19
+-->
