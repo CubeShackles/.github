@@ -2,9 +2,11 @@
 
 [English](./README.md) | [Português](./README.pt.md)
 
-Este repositório constitui a camada de governação e configuração transversal da organização CubeShackles no GitHub.
+Este repositório público constitui a camada transversal de governação, perfil institucional e configuração partilhada da organização CubeShackles no GitHub.
 
-Centraliza normas partilhadas, modelos, fluxos de trabalho e controlos institucionais aplicáveis ao portefólio de repositórios CubeShackles.
+Centraliza metadados públicos da organização, modelos reutilizáveis, fluxos de trabalho e controlos institucionais de engenharia aplicáveis ao portefólio de repositórios CubeShackles.
+
+> Este repositório não contém a implementação da Aplicação GitHub da CubeShackles e não deve armazenar credenciais, chaves privadas, segredos de webhook ou lógica de geração de tokens. A infraestrutura de autenticação deve permanecer num repositório privado separado.
 
 ## Âmbito
 
@@ -15,6 +17,20 @@ Centraliza normas partilhadas, modelos, fluxos de trabalho e controlos instituci
 - Convenções de governação dos repositórios
 - Controlos de documentação e localização à escala da organização
 - Referências de segurança, autoria e políticas de engenharia
+
+## Limite de segurança
+
+Este repositório pode conter apenas políticas públicas e configuração partilhada não sensível.
+
+Os seguintes ativos devem permanecer fora deste repositório:
+
+- Código-fonte e configuração de implantação da Aplicação GitHub
+- Chaves privadas da Aplicação GitHub
+- Segredos de webhook
+- Tokens de acesso de instalação
+- Personal Access Tokens
+- Credenciais específicas de ambientes
+- Runbooks operacionais internos com detalhes sensíveis de acesso
 
 ## Referências canónicas
 
@@ -31,14 +47,15 @@ Ferramentas de engenharia assistida por inteligência artificial podem apoiar a 
 
 Cada pull request material deve incluir as etiquetas adequadas `type:*`, `layer:*` e `risk:*`, bem como um marco da plataforma quando aplicável.
 
-## Distinção dos ficheiros
+## Distinção dos ficheiros e repositórios
 
-- `README.md` documenta este repositório de governação `.github`.
+- `README.md` documenta este repositório público de governação `.github`.
 - `profile/README.md` é apresentado no perfil público da organização CubeShackles.
 - `profile/README.pt.md` contém a versão portuguesa do perfil institucional.
+- A Aplicação GitHub da CubeShackles deve ser mantida separadamente num repositório privado.
 
 ---
 
-**Estado:** Repositório ativo de governação organizacional  
+**Estado:** Repositório público ativo de governação organizacional  
 **Idioma canónico:** Inglês  
 **Localização institucional:** Português (`pt-AO`)
