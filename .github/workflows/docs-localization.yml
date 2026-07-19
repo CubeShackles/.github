@@ -54,4 +54,6 @@ jobs:
           python-version: "3.12"
 
       - name: Validate bilingual documentation
-        run: python3 ${{ inputs.canonical-path }}/scripts/validate_localization.py .
+        run: |
+          python3 "${{ inputs.canonical-path }}/scripts/validate_localization.py" . \
+            --claims-register "${{ inputs.canonical-path }}/docs/CLAIMS_REGISTER.md"
