@@ -59,3 +59,12 @@ A CubeShackles está a estruturar capacidades para integração futura com insti
 ---
 
 © 2026 CubeShackles. Todos os direitos reservados.
+
+<!--
+localization:
+  canonical_file: README.md
+  locale: pt-AO
+  translation_status: machine-assisted
+  canonical_commit: 6360573802366c158779d3214328148c4870881e
+  last_synchronized: 2026-07-19
+-->
