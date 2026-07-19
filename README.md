@@ -2,9 +2,11 @@
 
 [English](./README.md) | [Português](./README.pt.md)
 
-This repository is the organization-wide governance and configuration layer for the CubeShackles GitHub ecosystem.
+This public repository is the organization-wide GitHub governance, profile and shared-configuration layer for the CubeShackles ecosystem.
 
-It centralizes shared standards, templates, workflows and institutional controls applied across the CubeShackles repository portfolio.
+It centralizes public organization metadata, reusable templates, workflows and institutional engineering controls applied across the CubeShackles repository portfolio.
+
+> This repository is not the CubeShackles GitHub App implementation and must not contain application credentials, private keys, webhook secrets or token-generation logic. Authentication infrastructure belongs in a separate private repository.
 
 ## Scope
 
@@ -15,6 +17,20 @@ It centralizes shared standards, templates, workflows and institutional controls
 - Repository governance conventions
 - Organization-wide documentation and localization controls
 - Security, authorship and engineering policy references
+
+## Security boundary
+
+This repository may contain public policies and non-sensitive shared configuration only.
+
+The following assets must remain outside this repository:
+
+- GitHub App source code and deployment configuration
+- GitHub App private keys
+- Webhook secrets
+- Installation access tokens
+- Personal Access Tokens
+- Environment-specific credentials
+- Internal operational runbooks containing sensitive access details
 
 ## Canonical references
 
@@ -33,12 +49,13 @@ Every material pull request should carry the appropriate `type:*`, `layer:*` and
 
 ## Repository distinction
 
-- `README.md` documents this `.github` governance repository.
+- `README.md` documents this public `.github` governance repository.
 - `profile/README.md` is rendered on the public CubeShackles organization profile.
 - `profile/README.pt.md` is the Portuguese organization-profile version.
+- The CubeShackles GitHub App must be maintained separately in a private repository.
 
 ---
 
-**Status:** Active organization-governance repository  
+**Status:** Active public organization-governance repository  
 **Canonical language:** English  
 **Institutional localization:** Portuguese (`pt-AO`)
