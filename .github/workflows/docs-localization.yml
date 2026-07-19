@@ -1,0 +1,57 @@
+# CubeShackles/.github/.github/workflows/docs-localization.yml
+#
+# Reusable workflow — bilingual (EN/PT) documentation validation.
+# Auth: GitHub App token minted per-run (no PATs, no rotation).
+# Checkout: calling repo + cubeshackles (canonical validator script) on every run.
+#
+# The validator is deterministic (stdlib-only Python) per
+# cubeshackles/docs/LOCALIZATION_POLICY.md section 8. It is a required gate
+# where wired in; AI review may supplement it but is never the only check.
+
+name: Docs Localization
+
+on:
+  workflow_call:
+    inputs:
+      canonical-path:
+        description: "Path where the cubeshackles umbrella repo is checked out"
+        type: string
+        default: "cubeshackles"
+    secrets:
+      CUBESHACKLES_APP_ID:
+        required: true
+      CUBESHACKLES_APP_PRIVATE_KEY:
+        required: true
+
+jobs:
+  validate-localization:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate CI token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.CUBESHACKLES_APP_ID }}
+          private-key: ${{ secrets.CUBESHACKLES_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Checkout cubeshackles (canonical policy + validator)
+        uses: actions/checkout@v4
+        with:
+          repository: CubeShackles/cubeshackles
+          path: ${{ inputs.canonical-path }}
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate bilingual documentation
+        run: python3 ${{ inputs.canonical-path }}/scripts/validate_localization.py .
