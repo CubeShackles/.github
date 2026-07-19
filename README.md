@@ -1,36 +1,66 @@
-# CubeShackles GitHub Governance
+# CubeShackles GitHub App
 
 [English](./README.md) | [Português](./README.pt.md)
 
-This public repository is the organization-wide GitHub governance, profile and shared-configuration layer for the CubeShackles ecosystem.
+This private repository contains the configuration, operational controls and organization-wide integration assets for the CubeShackles GitHub App.
 
-It centralizes public organization metadata, reusable templates, workflows and institutional engineering controls applied across the CubeShackles repository portfolio.
+The application provides authenticated access to authorized CubeShackles repositories through fine-grained, short-lived GitHub App installation tokens instead of Personal Access Tokens (PATs) or long-lived user credentials.
 
-> This repository is not the CubeShackles GitHub App implementation and must not contain application credentials, private keys, webhook secrets or token-generation logic. Authentication infrastructure belongs in a separate private repository.
+## Purpose
 
-## Scope
+- Authenticate approved automation against CubeShackles repositories
+- Issue short-lived installation access tokens
+- Apply least-privilege repository permissions
+- Support GitHub API operations across the organization
+- Centralize reusable workflows, templates and repository controls
+- Reduce dependence on user-bound Personal Access Tokens
+- Maintain an auditable boundary between human accounts and automated systems
 
-- Organization profile content under `profile/`
-- Shared contribution and pull-request standards
-- Issue and pull-request templates
-- Reusable GitHub Actions workflows
-- Repository governance conventions
-- Organization-wide documentation and localization controls
-- Security, authorship and engineering policy references
+## Repository structure
+
+- `profile/README.md` — English organization-profile source
+- `profile/README.pt.md` — Portuguese organization-profile source
+- `.github/` — shared workflows, templates and organization-level GitHub configuration
+- `README.md` — canonical documentation for this private GitHub App repository
+- `README.pt.md` — Portuguese institutional translation
+
+Because this repository is private, its `profile/README.md` is not intended to serve as the public organization profile unless GitHub's visibility requirements are separately satisfied through a public `.github` profile repository.
+
+## Authentication model
+
+The GitHub App must use:
+
+1. App identity authentication
+2. Installation-scoped authorization
+3. Short-lived installation access tokens
+4. Explicit repository selection
+5. Minimum required permissions
+6. Logged and reviewable automation
+
+Personal Access Tokens are not part of the normal operating model for supported automation.
 
 ## Security boundary
 
-This repository may contain public policies and non-sensitive shared configuration only.
+This repository must not commit or expose:
 
-The following assets must remain outside this repository:
-
-- GitHub App source code and deployment configuration
 - GitHub App private keys
 - Webhook secrets
 - Installation access tokens
 - Personal Access Tokens
 - Environment-specific credentials
-- Internal operational runbooks containing sensitive access details
+- Unencrypted secrets or exported authentication material
+
+Secrets must remain in an approved secret-management system and be injected only at runtime.
+
+## Governance
+
+All application permissions, repository access changes and automation workflows must be:
+
+- explicitly scoped;
+- reviewable through version control;
+- attributable to an approved operator or workflow;
+- revocable without depending on an individual user account;
+- aligned with CubeShackles repository-governance and security policies.
 
 ## Canonical references
 
@@ -39,23 +69,9 @@ The following assets must remain outside this repository:
 - [Repository map](https://github.com/CubeShackles/cubeshackles/blob/main/REPOSITORY_MAP.md)
 - [GitHub taxonomy](https://github.com/CubeShackles/cubeshackles/blob/main/docs/GITHUB_TAXONOMY.md)
 
-## Governance doctrine
-
-CubeShackles repositories must remain auditable, technically legible and explicit about maturity, ownership, risk and regulatory scope.
-
-AI-assisted engineering tools may support implementation and documentation. They are not authors, owners, regulators or institutional approvers of CubeShackles systems.
-
-Every material pull request should carry the appropriate `type:*`, `layer:*` and `risk:*` labels, together with a platform milestone where applicable.
-
-## Repository distinction
-
-- `README.md` documents this public `.github` governance repository.
-- `profile/README.md` is rendered on the public CubeShackles organization profile.
-- `profile/README.pt.md` is the Portuguese organization-profile version.
-- The CubeShackles GitHub App must be maintained separately in a private repository.
-
 ---
 
-**Status:** Active public organization-governance repository  
+**Visibility:** Private  
+**Function:** CubeShackles GitHub App and organization automation control repository  
 **Canonical language:** English  
 **Institutional localization:** Portuguese (`pt-AO`)
