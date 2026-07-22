@@ -4,20 +4,33 @@
 
 **AOA-native programmable financial infrastructure, designed in Angola for institutional, regulated, and connectivity-constrained environments.**
 
-CubeShackles is developing a modular financial platform spanning payments, identity, credit intelligence, digital assets, tokenization, clearing, settlement, custody, supervision, and institutional integration. The architecture is distributed across specialized repositories with versioned contracts, explicit responsibility boundaries, and auditable validation mechanisms.
+CubeShackles is a founder-led platform building modular financial rails for payments, identity, credit intelligence, digital assets, tokenization, clearing, settlement, custody, supervision, and institutional integration. Work is organized across specialized repositories with versioned contracts, explicit responsibility boundaries, and auditable validation mechanisms.
 
-> **Platform status:** pre-production development. The repositories contain implemented components, prototypes, contract surfaces, and planned capabilities at different maturity levels. The presence of code or documentation does not constitute regulatory approval, certification, national deployment, or commercial availability.
+> **Platform status:** pre-production development. Repositories contain implemented components, prototypes, contract surfaces, and planned capabilities at different maturity levels. The presence of code or documentation does **not** constitute regulatory approval, certification, national deployment, partnership endorsement, or commercial availability.
+
+## Start here
+
+| Resource | Purpose |
+|---|---|
+| [`cubeshackles`](https://github.com/CubeShackles/cubeshackles) | Public umbrella — platform doctrine, repository map, contribution standards, and interoperability policy |
+| [Contribution rules](https://github.com/CubeShackles/cubeshackles/blob/main/CONTRIBUTING.md) | How humans and automation contribute |
+| [Repository map](https://github.com/CubeShackles/cubeshackles/blob/main/REPOSITORY_MAP.md) | How the specialized repositories fit together |
+| [Claims Register](https://github.com/CubeShackles/cubeshackles/blob/main/docs/CLAIMS_REGISTER.md) | Tracked maturity and wording discipline for sensitive institutional claims |
+
+Many sibling repositories remain private during pre-production. Public visitors should treat the umbrella repository as the canonical entry point.
 
 ## Engineering principles
 
-- **Angola as the origin jurisdiction:** native kwanza support, local operating requirements, and resilience under uneven connectivity.
-- **Institutional architecture:** separation of ledger, clearing, settlement, custody, compliance, supervision, and access channels.
-- **Verifiable operation:** versioned contracts, deterministic validation, traceability, and technical evidence.
-- **Security by design:** access controls, secrets governance, responsibility isolation, and operational recovery.
-- **Interoperability:** APIs, SDKs, canonical events, and shared data models across platform components.
-- **Maturity transparency:** explicit distinction between implemented, experimental, prototype, planned, and externally authorized capabilities.
+- **Angola as the origin jurisdiction** — native kwanza (AOA) support, local operating requirements, and resilience under uneven connectivity.
+- **Institutional architecture** — separation of ledger, clearing, settlement, custody, compliance, supervision, and access channels.
+- **Verifiable operation** — versioned contracts, deterministic validation, traceability, and technical evidence.
+- **Security by design** — access controls, secrets governance, responsibility isolation, and operational recovery.
+- **Interoperability** — APIs, SDKs, canonical events, and shared data models across platform components.
+- **Maturity transparency** — explicit distinction between implemented, partially implemented, prototype, experimental, planned, and externally authorized capabilities.
 
-## Core verticals
+## Platform verticals
+
+Representative repository families (names only — access may be private during pre-production):
 
 | Vertical | Representative repositories |
 |---|---|
@@ -32,7 +45,7 @@ CubeShackles is developing a modular financial platform spanning payments, ident
 
 ## Repository model
 
-Each repository should declare:
+Each repository is expected to declare:
 
 1. functional responsibility;
 2. explicit scope boundaries;
@@ -41,16 +54,7 @@ Each repository should declare:
 5. validation commands;
 6. risks, assumptions, and unverified capabilities.
 
-The central [`cubeshackles`](https://github.com/CubeShackles/cubeshackles) repository contains platform doctrine, contribution standards, the repository map, and interoperability policies.
-
-## Technical governance
-
-- [Contribution rules](https://github.com/CubeShackles/cubeshackles/blob/main/CONTRIBUTING.md)
-- [Authorship and tooling](https://github.com/CubeShackles/cubeshackles/blob/main/governance/policies/authorship-and-tooling.md)
-- [Repository map](https://github.com/CubeShackles/cubeshackles/blob/main/REPOSITORY_MAP.md)
-- [GitHub taxonomy](https://github.com/CubeShackles/cubeshackles/blob/main/docs/GITHUB_TAXONOMY.md)
-
-Artificial-intelligence tools may assist engineering, but they are not authors, owners, or institutional principals of CubeShackles assets.
+Artificial-intelligence tools may assist engineering. They are not authors, owners, or institutional principals of CubeShackles assets. See [authorship and tooling](https://github.com/CubeShackles/cubeshackles/blob/main/governance/policies/authorship-and-tooling.md).
 
 ## Institutional scope
 

@@ -1,43 +1,46 @@
-# Aplicação GitHub da CubeShackles
+# CubeShackles `.github`
 
 [English](./README.md) | [Português](./README.pt.md)
 
-Este repositório privado contém a configuração, os controlos operacionais e os recursos de integração transversal utilizados pela Aplicação GitHub da CubeShackles.
+Configuração GitHub ao nível da organização CubeShackles: perfil público da
+organização, fluxos reutilizáveis, modelos de issues/PRs e documentação do
+modelo operacional da Aplicação GitHub.
 
-A aplicação fornece acesso autenticado aos repositórios CubeShackles autorizados através de tokens temporários de instalação do GitHub App, com permissões granulares, em vez de Personal Access Tokens (PATs) ou credenciais de utilizadores com longa duração.
+## Perfil público da organização
 
-## Finalidade
+O GitHub apresenta o README da Overview da organização a partir de:
 
-- Autenticar automações aprovadas nos repositórios CubeShackles
-- Emitir tokens temporários de acesso de instalação
-- Aplicar permissões de repositório segundo o princípio do menor privilégio
-- Suportar operações da API do GitHub em toda a organização
-- Centralizar fluxos reutilizáveis, modelos e controlos de repositórios
-- Reduzir a dependência de Personal Access Tokens associados a utilizadores
-- Manter uma separação auditável entre contas humanas e sistemas automatizados
+- [`profile/README.md`](./profile/README.md) — Inglês (canónico)
+- [`profile/README.pt.md`](./profile/README.pt.md) — Português (`pt-AO`)
 
-## Estrutura do repositório
+Este repositório é **público** para que o conteúdo do perfil fique visível a
+não membros em [github.com/CubeShackles](https://github.com/CubeShackles).
 
-- `profile/README.md` — fonte inglesa do perfil institucional
-- `profile/README.pt.md` — fonte portuguesa do perfil institucional
-- `.github/` — fluxos partilhados, modelos e configuração organizacional do GitHub
-- `README.md` — documentação canónica deste repositório privado da Aplicação GitHub
-- `README.pt.md` — tradução institucional em português
+A doutrina profunda da plataforma vive no repositório umbrella público
+[`cubeshackles`](https://github.com/CubeShackles/cubeshackles).
 
-Como este repositório é privado, o ficheiro `profile/README.md` não deve ser considerado o perfil público da organização, salvo se os requisitos de visibilidade do GitHub forem satisfeitos separadamente através de um repositório `.github` público destinado ao perfil.
+## O que mais este repositório contém
 
-## Modelo de autenticação
+- `.github/workflows/` — fluxos reutilizáveis da organização (por exemplo
+  localização de documentação e CI padrão)
+- `.github/ISSUE_TEMPLATE/`, `.github/PULL_REQUEST_TEMPLATE.md` —
+  modelos partilhados de contribuição
+- Este README — notas operacionais da superfície GitHub da organização
 
-A Aplicação GitHub deve utilizar:
+## Modelo operacional da Aplicação GitHub
+
+A automação da CubeShackles deve autenticar-se com tokens temporários de
+instalação do GitHub App, em vez de Personal Access Tokens (PATs) de longa
+duração.
+
+Propriedades esperadas:
 
 1. Autenticação pela identidade da aplicação
 2. Autorização limitada à instalação
 3. Tokens temporários de acesso de instalação
-4. Seleção explícita dos repositórios autorizados
+4. Seleção explícita dos repositórios
 5. Permissões mínimas necessárias
-6. Automação registada, auditável e sujeita a revisão
-
-Personal Access Tokens não integram o modelo operacional normal das automações suportadas.
+6. Automação registada e sujeita a revisão
 
 ## Limite de segurança
 
@@ -50,29 +53,19 @@ Este repositório não deve guardar nem expor:
 - Credenciais específicas de ambientes
 - Segredos não cifrados ou material de autenticação exportado
 
-Os segredos devem permanecer num sistema aprovado de gestão de segredos e ser disponibilizados apenas durante a execução.
+Os segredos devem permanecer num sistema aprovado de gestão de segredos e ser
+disponibilizados apenas durante a execução.
 
 ## Governação
 
-Todas as permissões da aplicação, alterações de acesso a repositórios e automações devem ser:
-
-- explicitamente delimitadas;
-- analisáveis através do controlo de versões;
-- atribuíveis a um operador ou fluxo aprovado;
-- revogáveis sem dependência de uma conta individual;
-- alinhadas com as políticas de segurança e governação de repositórios da CubeShackles.
-
-## Referências canónicas
-
 - [Normas de contribuição](https://github.com/CubeShackles/cubeshackles/blob/main/CONTRIBUTING.md)
-- [Política de autoria e ferramentas](https://github.com/CubeShackles/cubeshackles/blob/main/governance/policies/authorship-and-tooling.md)
-- [Mapa dos repositórios](https://github.com/CubeShackles/cubeshackles/blob/main/REPOSITORY_MAP.md)
+- [Autoria e ferramentas](https://github.com/CubeShackles/cubeshackles/blob/main/governance/policies/authorship-and-tooling.md)
+- [Mapa de repositórios](https://github.com/CubeShackles/cubeshackles/blob/main/REPOSITORY_MAP.md)
 - [Taxonomia do GitHub](https://github.com/CubeShackles/cubeshackles/blob/main/docs/GITHUB_TAXONOMY.md)
 
 ---
 
-**Visibilidade:** Privada  
-**Função:** Aplicação GitHub da CubeShackles e repositório de controlo da automação organizacional  
+**Visibilidade:** Pública (necessária para o README do perfil da organização)  
 **Idioma canónico:** Inglês  
 **Localização institucional:** Português (`pt-AO`)
 
@@ -81,6 +74,6 @@ localization:
   canonical_file: README.md
   locale: pt-AO
   translation_status: machine-assisted
-  canonical_commit: aa612a51e1e1f1739eb654342023c01f9e62841d
-  last_synchronized: 2026-07-19
+  canonical_commit: PENDING_AFTER_COMMIT
+  last_synchronized: 2026-07-22
 -->
