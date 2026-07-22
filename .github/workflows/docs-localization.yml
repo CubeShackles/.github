@@ -57,3 +57,17 @@ jobs:
         run: |
           python3 "${{ inputs.canonical-path }}/scripts/validate_localization.py" . \
             --claims-register "${{ inputs.canonical-path }}/docs/CLAIMS_REGISTER.md"
+
+      - name: Check for dead internal documentation links
+        run: |
+          set -euo pipefail
+          # The umbrella repo is checked out under inputs.canonical-path inside
+          # this workspace. Move it aside for the scan so consumer CI validates
+          # only the calling repo's Markdown — not the umbrella's own docs.
+          CANONICAL="${{ inputs.canonical-path }}"
+          CANONICAL="${CANONICAL%/}"
+          ASIDE="${RUNNER_TEMP}/cubeshackles-canonical"
+          mv "${CANONICAL}" "${ASIDE}"
+          trap 'mv "${ASIDE}" "${CANONICAL}"' EXIT
+          echo "Scanning calling-repo Markdown for dead relative links..."
+          python3 "${ASIDE}/scripts/check_doc_links.py" .
