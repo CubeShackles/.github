@@ -2,63 +2,52 @@
 
 # CubeShackles
 
-**AOA-native programmable financial infrastructure, designed in Angola for institutional, regulated, and connectivity-constrained environments.**
+CubeShackles is a founder-led platform building **AOA-native programmable financial infrastructure** for institutional, regulated, and connectivity-constrained environments — with **Angola** as the origin jurisdiction and a focus on durable rails for Africa.
 
-CubeShackles is a founder-led platform building modular financial rails for payments, identity, credit intelligence, digital assets, tokenization, clearing, settlement, custody, supervision, and institutional integration. Work is organized across specialized repositories with versioned contracts, explicit responsibility boundaries, and auditable validation mechanisms.
+## Jurisdictions
 
-> **Platform status:** pre-production development. Repositories contain implemented components, prototypes, contract surfaces, and planned capabilities at different maturity levels. The presence of code or documentation does **not** constitute regulatory approval, certification, national deployment, partnership endorsement, or commercial availability.
+CubeShackles is engineered for **Angola-first** operating reality (native kwanza / AOA settlement semantics, intermittent connectivity). The GitHub organization is operated from the **United States**. Regulated use in any country remains subject to local law and authorization.
 
-## Start here
+## This organization
 
-| Resource | Purpose |
-|---|---|
-| [`cubeshackles`](https://github.com/CubeShackles/cubeshackles) | Public umbrella — platform doctrine, repository map, contribution standards, and interoperability policy |
-| [Contribution rules](https://github.com/CubeShackles/cubeshackles/blob/main/CONTRIBUTING.md) | How humans and automation contribute |
-| [Repository map](https://github.com/CubeShackles/cubeshackles/blob/main/REPOSITORY_MAP.md) | How the specialized repositories fit together |
-| [Claims Register](https://github.com/CubeShackles/cubeshackles/blob/main/docs/CLAIMS_REGISTER.md) | Tracked maturity and wording discipline for sensitive institutional claims |
+This organization hosts the CubeShackles platform repositories. The public entry point is:
 
-Many sibling repositories remain private during pre-production. Public visitors should treat the umbrella repository as the canonical entry point.
+- [`cubeshackles`](https://github.com/CubeShackles/cubeshackles) — umbrella doctrine, repository map, contribution standards, and interoperability policy
 
-## Engineering principles
+Many sibling repositories remain private during pre-production. Public visitors should start with the umbrella repository.
 
-- **Angola as the origin jurisdiction** — native kwanza (AOA) support, local operating requirements, and resilience under uneven connectivity.
-- **Institutional architecture** — separation of ledger, clearing, settlement, custody, compliance, supervision, and access channels.
-- **Verifiable operation** — versioned contracts, deterministic validation, traceability, and technical evidence.
-- **Security by design** — access controls, secrets governance, responsibility isolation, and operational recovery.
-- **Interoperability** — APIs, SDKs, canonical events, and shared data models across platform components.
-- **Maturity transparency** — explicit distinction between implemented, partially implemented, prototype, experimental, planned, and externally authorized capabilities.
+This `.github` repository holds the **organization profile** (this README), reusable workflows, and shared contribution templates.
 
-## Platform verticals
+## Public principles
 
-Representative repository families (names only — access may be private during pre-production):
+- **Maturity transparency** — distinguish implemented, prototype, experimental, planned, and externally authorized work  
+- **Institutional architecture** — separate ledger, clearing, settlement, custody, compliance, supervision, and access channels  
+- **Verifiable operation** — versioned contracts, deterministic validation, traceability, and technical evidence  
+- **Long-term infrastructure discipline** — build durable systems, not short-term narratives  
 
-| Vertical | Representative repositories |
-|---|---|
-| Platform and governance | `cubeshackles`, `Cubeshackles-core`, `Cubeshackles-control-plane`, `cubeshackles-platform-specs` |
-| Ledger and settlement | `cubeshackles-ledger`, `cubeshackles-clearing-house`, `cubeshackles-settlement-engine` |
-| Compliance and supervision | `cubeshackles-compliance-engine`, `cubeshackles-regulatory-reporting`, `cubeshackles-supervision` |
-| Assets and custody | `cubeshackles-tokenization-engine`, `cubeshackles-asset-registry`, `cubeshackles-rwa-custody`, `cubeshackles-vault` |
-| Infrastructure and resilience | `cubeshackles-infra`, `cubeshackles-offline-infrastructure`, `cubeshackles-disaster-recovery`, `cubeshackles-observability` |
-| Intelligence and knowledge | `Cubeshackles-ciel`, `cubeshackles-ontology`, `cubeshackles-ai-runtime`, `cubeshackles-agent` |
-| Products | `CubeWallet`, `kulifikila`, `BualaBuitu`, `national-transit-app-cubeshackles` |
-| Integration and development | `cubeshackles-integration`, `cubeshackles-developer-portal`, `cubeshackles-ai-sdk`, `cubeshackles-design-system` |
+## Platform posture
 
-## Repository model
+CubeShackles is in **pre-production development**. Repositories contain implemented components, prototypes, contract surfaces, and planned capabilities at different maturity levels.
 
-Each repository is expected to declare:
+## Contributing
 
-1. functional responsibility;
-2. explicit scope boundaries;
-3. maturity status;
-4. interfaces and dependencies;
-5. validation commands;
-6. risks, assumptions, and unverified capabilities.
+See the umbrella [CONTRIBUTING.md](https://github.com/CubeShackles/cubeshackles/blob/main/CONTRIBUTING.md) and [authorship and tooling policy](https://github.com/CubeShackles/cubeshackles/blob/main/governance/policies/authorship-and-tooling.md).
 
-Artificial-intelligence tools may assist engineering. They are not authors, owners, or institutional principals of CubeShackles assets. See [authorship and tooling](https://github.com/CubeShackles/cubeshackles/blob/main/governance/policies/authorship-and-tooling.md).
+Artificial-intelligence tools may assist engineering. They are not authors, owners, or institutional principals of CubeShackles assets.
 
-## Institutional scope
+## Security
 
-CubeShackles is structuring capabilities for future integration with financial institutions, enterprises, public entities, technology operators, and supervisory bodies. Any regulated use remains subject to the licenses, authorizations, security assessments, institutional agreements, and legal requirements applicable in each jurisdiction.
+Do not publish secrets, private keys, or credentials in any CubeShackles repository. Report security concerns to **support@cubeshackles.com**.
+
+## Disclaimer
+
+Nothing in this organization profile constitutes regulatory approval, certification, national deployment, partnership endorsement, an offer to sell securities, or commercial availability. Public structure descriptions do not imply third-party endorsement, ownership, partnership, or approval.
+
+Tracked institutional claim maturity lives in the umbrella [Claims Register](https://github.com/CubeShackles/cubeshackles/blob/main/docs/CLAIMS_REGISTER.md).
+
+## Contact
+
+**support@cubeshackles.com**
 
 ---
 
