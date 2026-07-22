@@ -2,63 +2,52 @@
 
 # CubeShackles
 
-**Infraestrutura financeira programável, nativa em AOA, concebida em Angola para operar em ambientes institucionais, regulados e de conectividade limitada.**
+A CubeShackles é uma plataforma liderada pelo fundador que constrói **infraestrutura financeira programável, nativa em AOA**, para ambientes institucionais, regulados e de conectividade limitada — com **Angola** como jurisdição de origem e foco em carris duradouros para África.
 
-A CubeShackles é uma plataforma liderada pelo fundador que desenvolve carris financeiros modulares para pagamentos, identidade, crédito, activos digitais, tokenização, compensação, liquidação, custódia, supervisão e integração institucional. O trabalho está organizado em repositórios especializados, com contratos versionados, limites de responsabilidade explícitos e mecanismos de validação auditáveis.
+## Jurisdições
 
-> **Estado da plataforma:** desenvolvimento pré-produção. Os repositórios contêm componentes implementados, protótipos, superfícies contratuais e capacidades planeadas em diferentes níveis de maturidade. A presença de código ou documentação **não** constitui aprovação regulatória, certificação, implantação nacional, endosso de parceria ou disponibilidade comercial.
+A CubeShackles é concebida para a realidade operacional **Angola em primeiro lugar** (semântica de liquidação nativa em kwanza / AOA, conectividade intermitente). A organização GitHub é operada a partir dos **Estados Unidos**. Qualquer utilização regulada em qualquer país permanece sujeita à lei e autorizações locais.
 
-## Começar aqui
+## Esta organização
 
-| Recurso | Finalidade |
-|---|---|
-| [`cubeshackles`](https://github.com/CubeShackles/cubeshackles) | Umbrella público — doutrina da plataforma, mapa de repositórios, normas de contribuição e política de interoperabilidade |
-| [Normas de contribuição](https://github.com/CubeShackles/cubeshackles/blob/main/CONTRIBUTING.md) | Como humanos e automação contribuem |
-| [Mapa de repositórios](https://github.com/CubeShackles/cubeshackles/blob/main/REPOSITORY_MAP.md) | Como os repositórios especializados se encaixam |
-| [Registo de Alegações](https://github.com/CubeShackles/cubeshackles/blob/main/docs/CLAIMS_REGISTER.md) | Maturidade e disciplina de redacção para alegações institucionais sensíveis |
+Esta organização alojá os repositórios da plataforma CubeShackles. O ponto de entrada público é:
 
-Muitos repositórios irmãos permanecem privados durante a pré-produção. Os visitantes públicos devem tratar o repositório umbrella como o ponto de entrada canónico.
+- [`cubeshackles`](https://github.com/CubeShackles/cubeshackles) — doutrina umbrella, mapa de repositórios, normas de contribuição e política de interoperabilidade
 
-## Princípios de engenharia
+Muitos repositórios irmãos permanecem privados durante a pré-produção. Os visitantes públicos devem começar pelo repositório umbrella.
 
-- **Angola como jurisdição de origem** — suporte nativo ao kwanza (AOA), requisitos locais e resiliência sob conectividade desigual.
-- **Arquitectura institucional** — separação entre livro-razão, compensação, liquidação, custódia, conformidade, supervisão e canais de acesso.
-- **Operação verificável** — contratos versionados, validação determinística, rastreabilidade e evidências técnicas.
-- **Segurança por desenho** — controlos de acesso, governação de segredos, isolamento de responsabilidades e recuperação operacional.
-- **Interoperabilidade** — APIs, SDKs, eventos canónicos e modelos de dados partilhados entre os componentes da plataforma.
-- **Transparência de maturidade** — distinção explícita entre implementado, parcialmente implementado, protótipo, experimental, planeado e dependente de autorização externa.
+Este repositório `.github` contém o **perfil da organização** (este README), fluxos reutilizáveis e modelos partilhados de contribuição.
 
-## Verticais da plataforma
+## Princípios públicos
 
-Famílias de repositórios representativas (apenas nomes — o acesso pode ser privado durante a pré-produção):
+- **Transparência de maturidade** — distinguir o que está implementado, em protótipo, experimental, planeado ou dependente de autorização externa  
+- **Arquitectura institucional** — separar livro-razão, compensação, liquidação, custódia, conformidade, supervisão e canais de acesso  
+- **Operação verificável** — contratos versionados, validação determinística, rastreabilidade e evidências técnicas  
+- **Disciplina de infraestrutura de longo prazo** — construir sistemas duradouros, não narrativas de curto prazo  
 
-| Vertical | Repositórios representativos |
-|---|---|
-| Plataforma e governação | `cubeshackles`, `Cubeshackles-core`, `Cubeshackles-control-plane`, `cubeshackles-platform-specs` |
-| Livro-razão e liquidação | `cubeshackles-ledger`, `cubeshackles-clearing-house`, `cubeshackles-settlement-engine` |
-| Conformidade e supervisão | `cubeshackles-compliance-engine`, `cubeshackles-regulatory-reporting`, `cubeshackles-supervision` |
-| Activos e custódia | `cubeshackles-tokenization-engine`, `cubeshackles-asset-registry`, `cubeshackles-rwa-custody`, `cubeshackles-vault` |
-| Infraestrutura e resiliência | `cubeshackles-infra`, `cubeshackles-offline-infrastructure`, `cubeshackles-disaster-recovery`, `cubeshackles-observability` |
-| Inteligência e conhecimento | `Cubeshackles-ciel`, `cubeshackles-ontology`, `cubeshackles-ai-runtime`, `cubeshackles-agent` |
-| Produtos | `CubeWallet`, `kulifikila`, `BualaBuitu`, `national-transit-app-cubeshackles` |
-| Integração e desenvolvimento | `cubeshackles-integration`, `cubeshackles-developer-portal`, `cubeshackles-ai-sdk`, `cubeshackles-design-system` |
+## Postura da plataforma
 
-## Modelo de repositórios
+A CubeShackles está em **desenvolvimento pré-produção**. Os repositórios contêm componentes implementados, protótipos, superfícies contratuais e capacidades planeadas em diferentes níveis de maturidade.
 
-Cada repositório deve declarar:
+## Contribuição
 
-1. responsabilidade funcional;
-2. limites explícitos do âmbito;
-3. estado de maturidade;
-4. interfaces e dependências;
-5. comandos de validação;
-6. riscos, pressupostos e capacidades ainda não verificadas.
+Ver o [CONTRIBUTING.md](https://github.com/CubeShackles/cubeshackles/blob/main/CONTRIBUTING.md) do umbrella e a [política de autoria e ferramentas](https://github.com/CubeShackles/cubeshackles/blob/main/governance/policies/authorship-and-tooling.md).
 
-Ferramentas de inteligência artificial podem apoiar a engenharia. Não são autoras, proprietárias ou responsáveis institucionais pelos activos da CubeShackles. Ver [autoria e ferramentas](https://github.com/CubeShackles/cubeshackles/blob/main/governance/policies/authorship-and-tooling.md).
+Ferramentas de inteligência artificial podem apoiar a engenharia. Não são autoras, proprietárias ou responsáveis institucionais pelos activos da CubeShackles.
 
-## Âmbito institucional
+## Segurança
 
-A CubeShackles está a estruturar capacidades para integração futura com instituições financeiras, empresas, entidades públicas, operadores tecnológicos e organismos de supervisão. Qualquer utilização regulada permanece sujeita às licenças, autorizações, avaliações de segurança, acordos institucionais e requisitos jurídicos aplicáveis em cada jurisdição.
+Não publicar segredos, chaves privadas ou credenciais em qualquer repositório CubeShackles. Reportar preocupações de segurança para **support@cubeshackles.com**.
+
+## Aviso
+
+Nada neste perfil da organização constitui aprovação regulatória, certificação, implantação nacional, endosso de parceria, oferta de valores mobiliários ou disponibilidade comercial. As descrições públicas de estrutura não implicam endosso, propriedade, parceria ou aprovação de terceiros.
+
+A maturidade rastreada de alegações institucionais vive no [Registo de Alegações](https://github.com/CubeShackles/cubeshackles/blob/main/docs/CLAIMS_REGISTER.md) do umbrella.
+
+## Contacto
+
+**support@cubeshackles.com**
 
 ---
 
@@ -69,6 +58,6 @@ localization:
   canonical_file: README.md
   locale: pt-AO
   translation_status: machine-assisted
-  canonical_commit: f73334cbb9ff5795defd456ca85573201b6aa128
+  canonical_commit: 3769c9fef21ace61f33d262b97ac39a198d4a088
   last_synchronized: 2026-07-22
 -->
