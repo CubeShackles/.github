@@ -74,6 +74,6 @@ localization:
   canonical_file: README.md
   locale: pt-AO
   translation_status: machine-assisted
-  canonical_commit: PENDING_AFTER_COMMIT
+  canonical_commit: f73334cbb9ff5795defd456ca85573201b6aa128
   last_synchronized: 2026-07-22
 -->
